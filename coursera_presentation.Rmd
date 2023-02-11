@@ -1,0 +1,76 @@
+---
+title: "Coursera Presentation"
+author: "Gergely"
+date: "2023-02-10"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## My New Slide
+
+Some content
+
+***
+New slide without title
+
+## My Title
+
+### A top level subheading
+
+#### A second level subheading
+
+## Formatting Text
+
+Plain text
+
+*italicized text*
+
+**bold text**
+
+`for (i %in% 1:10)`
+
+## New Slide for R Code
+
+```{r comment = "", echo=TRUE, eval=TRUE}
+head(mtcars)
+```
+
+## New Slide for Plot
+
+```{r fig.align='center',fig.cap='My Awesome Figure'}
+plot(mtcars$wt, mtcars$mpg, xlab = "Weight", ylab = "MPG")
+```
+
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+-   Bullet 1
+-   Bullet 2
+-   Bullet 3
+
+1. Item a
+2. Item b
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Publish in Github
+

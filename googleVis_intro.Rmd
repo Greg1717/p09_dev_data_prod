@@ -1,0 +1,50 @@
+---
+title: "googleVis_intro"
+output:
+  html_document:
+    self_contained: false
+date: "2023-02-08"
+---
+
+https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_intro.html
+
+```{r}
+library(googleVis)
+```
+
+```{r}
+data(Exports)
+Exports
+```
+
+```{r}
+gchart <-  gvisGeoChart(data = Exports, 
+                      locationvar='Country',
+                      colorvar='Profit',
+                      options=list(projection="kavrayskiy-vii", 
+                                   width=400, height=200))
+gchart$type
+gchart$chartid
+print(gchart, tag='header')
+names(gchart$html$chart)
+```
+
+```{r}
+plot(gchart)
+```
+
+```{r}
+print(gchart, "chart")
+```
+
+```{r results='asis'}
+options(gvis.plot.tag='chart')
+plot(gchart)
+```
+
+```{r results='asis'}
+gchart <- gvisColumnChart(CityPopularity, 'City', 'Popularity',
+                        options=list(width=550, height=450,
+                                     legend='none'))
+print(gchart, 'chart')
+```
