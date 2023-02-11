@@ -74,3 +74,9 @@ plot(pressure)
 
 ## Publish in Github
 
+If master is renamed in github:
+
+git branch -m master <BRANCH>
+git fetch origin
+git branch -u origin/<BRANCH> <BRANCH>
+git remote set-head origin -a

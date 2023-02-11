@@ -1,0 +1,29 @@
+---
+title: "my_leaflet_week2"
+author: "Gergely"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+# Date
+
+This documents has been created at (system time):
+```{r}
+Sys.time()
+```
+
+
+# Map
+
+My location, where I write this assignment, is the following:
+
+```{r}
+suppressPackageStartupMessages(library(leaflet))
+
+my_map <- addMarkers(addTiles(leaflet()), lat = 48.0155, lng = 16.2626, popup = "Gergely's current location")
+# 48.0155° N, 16.2626° E
+my_map
+```
+

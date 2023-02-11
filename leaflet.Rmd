@@ -1,0 +1,101 @@
+---
+title: "Leaflet - Interactive Maps"
+author: "Gergely"
+date: "2023-02-11"
+output: html_document
+---
+
+Widely used package!
+
+# My First Map
+
+```{r}
+library(tidyr)
+suppressPackageStartupMessages(library(leaflet))
+my_map <- leaflet() %>%
+    addTiles()
+my_map
+my_map <- leaflet()
+my_map <- addTiles(my_map)
+my_map
+```
+
+# Adding Markers
+
+```{r}
+my_map <- my_map %>%
+    addMarkers(lat = 39.2980803, lng = -76.5898801, popup = "Jeff Leek's office")
+# equivalent to:
+my_map <- addMarkers(my_map, lat = 39.2980803, lng = -76.5898801, popup = "Jeff Leek's office")
+my_map
+```
+
+
+# Chaining with the Pipe Operator
+
+```{r}
+my_map <- leaflet() %>%
+    addTiles() %>%
+    addMarkers(lat = 39.2980803, lng = -76.5898801, popup = "Jeff Leek's office")
+my_map
+```
+
+
+# Adding Many Markers
+
+
+```{r}
+set.seed(2016-04-25)
+df <- data.frame(lat = runif(20, min = 39.2, max = 39.3),
+                 lng = runif(20, min = -76.6, max = -76.5))
+head(df)
+df %>% 
+    leaflet() %>% 
+    addTiles() %>% 
+    addMarkers()
+```
+
+
+# 
+
+```{r}
+hopkinsIcon <- makeIcon(iconUrl = "https://yt3.googleusercontent.com/ytc/AL5GRJWA_fmRWuc_v07_xA0uiwg1LcNu9cuCUVNZR4iSmw=s176-c-k-c0x00ffffff-no-rj",
+                        iconWidth = 31*215/230,
+                        iconHeight = 31,
+                        iconAnchorX = 31*215/230/2,
+                        iconAnchorY = 16)
+hopkinsLatLng <- data.frame(
+    lat = c(39.30, 39.33, 39.29, 39.297, 39.282),
+    lng = c(-76.593, -76.620, -76.547, -76.615, -76.602)
+)
+hopkinsLatLng %>% 
+    leaflet() %>% 
+    addTiles() %>% 
+    addMarkers(icon = hopkinsIcon)
+```
+
+# Mapping Clusters
+
+```{r}
+df <- data.frame(lat = runif(500, min = 39.25, max = 39.35),
+                 lng = runif(500, min = -76.65, max = -76.55))
+head(df)
+df %>% 
+    leaflet() %>% 
+    addTiles() %>% 
+    addMarkers(clusterOptions = markerClusterOptions())
+```
+
+
+# Mapping Circle Markers
+
+```{r}
+df <- data.frame(lat = runif(20, min = 39.25, max = 39.35),
+                 lng = runif(20, min = -76.65, max = -76.55))
+head(df)
+df %>% 
+    leaflet() %>% 
+    addTiles() %>% 
+    addCircleMarkers()
+```
+
