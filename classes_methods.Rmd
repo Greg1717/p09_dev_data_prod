@@ -1,0 +1,54 @@
+---
+title: "R Classes and Methods"
+author: "Gergely"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r}
+?Classes
+?Introduction
+?setClass
+?setMethod
+# S4
+?Classes_Details
+?setGeneric
+class(1)
+class(TRUE)
+class(NA)
+class("foo")
+```
+
+
+# S3 generic functions
+
+```{r}
+mean
+methods(mean)
+mean.default
+print
+```
+
+
+# An S4 Generic Function
+
+```{r}
+show
+```
+
+# S4 Methods
+
+```{r}
+showMethods("show")
+```
+
+To see the code for an S3 method:
+```{r}
+getS3method()
+```
+
+... for S4 methods:
+```{r}
+getMethod()
+```
+
