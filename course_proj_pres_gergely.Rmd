@@ -1,0 +1,50 @@
+---
+title: "Presentation of Linear Models in Shiny"
+author: "Gergely Horvath"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+mpgData <- mtcars[, c("mpg", "disp")]
+faithfulData <- faithful
+```
+
+## Datasets
+
+On the left side of the screen there is a selectInput widget which the user may use to select the dataset to be charted.
+
+The available datasets are:
+
+```{r}
+head(mtcars[, c("mpg", "disp")], 2)
+```
+
+```{r}
+head(faithful, 2)
+```
+
+
+## Scatter Plot & Linear Model
+
+After selection of a dataset, the scatterplot is automatically updated as it is 'reactive'. 
+
+If the check box "Draw Regression Line" is selected by the user, then a Linear Model is calculated and the regression line is drawn as seen on the next page.
+
+This page is located at: https://greg1717.github.io/p09_dev_data_prod/week_3_plotly.html
+
+***
+```{r}
+plot(mpg ~ disp, data = mpgData)
+lm1 <- lm(mpg ~ disp, data = mtcars)
+abline(lm1)
+```
+
+***
+
+```{r}
+plot(eruptions ~ waiting, data = faithfulData)
+lm1 <- lm(eruptions ~ waiting, data = faithfulData)
+abline(lm1)
+```

@@ -12,7 +12,6 @@ runExample("09_upload")     # file upload wizard
 runExample("10_download")   # file download wizard
 runExample("11_timer")      # an automated timer
 
-
 # **Reactive expressions** are a bit smarter than regular R functions. They cache their values and know when their values have become outdated. What does this mean? The first time that you run a reactive expression, the expression will save its result in your computer’s memory. The next time you call the reactive expression, it can return this saved result without doing any computation (which will make your app faster).
 
 # The reactive expression will only return the saved result if it knows that the result is up-to-date. If the reactive expression has learned that the result is obsolete (because a widget has changed), the expression will recalculate the result. It then returns the new result and saves a new copy. The reactive expression will use this new copy until it too becomes out of date.

@@ -1,0 +1,56 @@
+---
+title: "Swirl - Week 4"
+author: "Gergely"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(swirlify)
+new_lesson("Lesson 1", "My First Course")
+```
+
+> library(swirlify)
+> new_lesson("Lesson 1", "My First Course")
+Creating new lesson in /Users/gergely/Documents/coursera/data_science/p09_dev_data_prod/My_First_Course/Lesson_1
+If the lesson file doesn't open automatically, you can open it now to begin editing...
+> wq_message()
+> wq_command()
+> add_to_manifest()
+> test_lesson()
+##### Begin testing: Lesson 1 #####
+##### End testing: Lesson 1 #####
+
+> demo_lesson()
+
+| Course installed successfully!
+
+  |                                                                                                                             |   0%
+
+| Welcome to Lesson 1!
+
+
+# Multiple Options
+
+get_current_lesson()
+
+```{r}
+new_lesson("Lesson 2", "My First Course")
+wq_multiple()
+add_to_manifest()
+test_lesson()
+demo_lesson()
+```
+
+# Figure Type Question
+
+```{r}
+wq_figure()
+# figure will come from an R script
+# figure type "new" or "add"
+```
+
