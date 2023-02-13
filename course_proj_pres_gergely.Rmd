@@ -6,6 +6,7 @@ output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
+# This page is located at: https://greg1717.github.io/p09_dev_data_prod/course_proj_pres_gergely.html
 knitr::opts_chunk$set(echo = TRUE)
 mpgData <- mtcars[, c("mpg", "disp")]
 faithfulData <- faithful
@@ -13,9 +14,7 @@ faithfulData <- faithful
 
 ## Datasets
 
-On the left side of the screen there is a selectInput widget which the user may use to select the dataset to be charted.
-
-The available datasets are:
+On the left side of the screen there is a selectInput widget which the user may use to select the dataset to be charted. The available datasets are:
 
 ```{r}
 head(mtcars[, c("mpg", "disp")], 2)
@@ -32,7 +31,6 @@ After selection of a dataset, the scatterplot is automatically updated as it is 
 
 If the check box "Draw Regression Line" is selected by the user, then a Linear Model is calculated and the regression line is drawn as seen on the next page.
 
-This page is located at: https://greg1717.github.io/p09_dev_data_prod/course_proj_pres_gergely.html
 
 ***
 ```{r}
