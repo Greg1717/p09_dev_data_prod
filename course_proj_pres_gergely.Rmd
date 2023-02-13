@@ -32,7 +32,7 @@ After selection of a dataset, the scatterplot is automatically updated as it is 
 
 If the check box "Draw Regression Line" is selected by the user, then a Linear Model is calculated and the regression line is drawn as seen on the next page.
 
-This page is located at: https://greg1717.github.io/p09_dev_data_prod/week_3_plotly.html
+This page is located at: https://greg1717.github.io/p09_dev_data_prod/course_proj_pres_gergely.html
 
 ***
 ```{r}
